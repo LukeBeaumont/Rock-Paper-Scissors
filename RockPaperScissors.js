@@ -24,9 +24,11 @@ function getWinner() {
     }  else if (playerSelection===computerChoice) {
         alert(`Computer chose ${computerChoice}.It's a draw!`);
 
-    }    else {
-        alert(`computer chose ${computerChoice}. You Lose :(`)
-}
-
+    } else if (playerSelection !== "Rock" || "Paper" || "Scissors") {
+        alert("Not a valid selection")
+   
+    }   else {
+        alert(`computer chose ${computerChoice}. You Lose :(`);
+ }
 }
 alert (getWinner())
