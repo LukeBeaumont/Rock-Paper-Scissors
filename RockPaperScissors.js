@@ -1,30 +1,30 @@
-let playerSelection = prompt ("Rock, Paper or Scissors?")
+let playerSelection = prompt ("Rock, Paper or Scissors?").toLowerCase()
 
 let generateComputerChoice = Math.floor(Math.random() * 3)
 
 
 function getComputerChoice(){
 if (generateComputerChoice===0) {
-    return ("Rock"); 
+    return ("rock"); 
 } else if (generateComputerChoice===1) {
-    return ("Scissors");
+    return ("scissors");
 } else {
-    return ("Paper");
+    return ("paper");
 }
 }
 
 let computerChoice = getComputerChoice();
 
 function getWinner() {
-    if (playerSelection === "Rock" && computerChoice === "Scissors" || 
-                playerSelection === "Scissors" && computerChoice === "Paper" ||
-                playerSelection === "Paper" && computerChoice === "Rock") {
+    if (playerSelection === "rock" && computerChoice === "scissors" || 
+                playerSelection === "scissors" && computerChoice === "paper" ||
+                playerSelection === "paper" && computerChoice === "rock") {
                     alert (`computer chose ${computerChoice}. You Win!!`);
 
     }  else if (playerSelection===computerChoice) {
         alert(`Computer chose ${computerChoice}.It's a draw!`);
 
-    } else if (playerSelection !== "Rock" || "Paper" || "Scissors") {
+    } else if (playerSelection !== "rock" || "paper" || "scissors") {
         alert("Not a valid selection")
    
     }   else {
