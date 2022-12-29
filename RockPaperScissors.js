@@ -4,21 +4,19 @@ function getComputerChoice() {
     return random;
    }
 
-function getWinner() {
-    if (playerSelection == "rock" && computerChoice == "scissors" || 
-                playerSelection == "scissors" && computerChoice == "paper" ||
-                playerSelection == "paper" && computerChoice == "rock") {
-                    alert (`Computer chose ${computerChoice}. You Win!!`);
-                  
+   function playRound (computerSelection,playerSelection){
+    if (playerSelection===computerSelection){
+        return ("it's a draw");
+    } else if (playerSelection==="paper" && computerSelection==="rock" ||
+               playerSelection==="rock" && computerSelection==="scissors" ||
+               playerSelection==="scissors" && computerSelection==="paper"){
+                return (`you win! computer chose ${computerSelection}`);
+    } else {
+        return (`you lose. computer chose ${computerSelection}`)
+    }
+   }
 
-    }  else if (playerSelection==computerChoice) {
-        alert(`Computer chose ${computerChoice}. It's a Draw!`);
-        
+   let playerSelection = prompt("rock paper scissors?").toLowerCase();
+   let computerSelection = getComputerChoice();
 
-    }   else {
-        alert(`Computer chose ${computerChoice}. You Lose!`);
-        
- }
-}
-alert (getWinner())
-
+   console.log(playRound(computerSelection,playerSelection))
