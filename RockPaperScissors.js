@@ -9,7 +9,7 @@ function getComputerChoice() {
 
    function playRound (computerSelection,playerSelection){
     if (playerSelection !== "rock" && playerSelection !== "paper" &&
-        playerSelection  && "scissors") {
+        playerSelection  !== "scissors") {
          return ("Not a valid input. Try again.");
     
     } else if (playerSelection===computerSelection){
@@ -34,9 +34,14 @@ function getComputerChoice() {
 
         console.log(playRound(computerSelection,playerSelection));
         console.log(`Player score: ${playerScore}. Computer score: ${computerScore}`);
+       
     }}
     
-   function getWinner () {
+    
+  
+    game();
+
+     function getWinner () {
         if (computerScore<playerScore) {
             return("You have won best out of 5!");
 
@@ -46,6 +51,5 @@ function getComputerChoice() {
           } else {
             return ("After 5 games its a draw!");
           }}
-    
-    game()
-    console.log(getWinner())
+
+    console.log (getWinner());
