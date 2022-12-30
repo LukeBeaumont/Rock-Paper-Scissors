@@ -8,16 +8,22 @@ function getComputerChoice() {
    }
 
    function playRound (computerSelection,playerSelection){
-    if (playerSelection===computerSelection){
+    if (playerSelection !== "rock" && playerSelection !== "paper" &&
+        playerSelection  && "scissors") {
+         return ("Not a valid input. Try again.");
+    
+    } else if (playerSelection===computerSelection){
         return ("it's a draw");
+      
     } else if (playerSelection==="paper" && computerSelection==="rock" ||
                playerSelection==="rock" && computerSelection==="scissors" ||
                playerSelection==="scissors" && computerSelection==="paper"){
                 playerScore++;
                 return (`you win! computer chose ${computerSelection}`);
+
     } else {
         computerScore++;
-        return (`you lose. computer chose ${computerSelection}`)
+        return (`you lose. computer chose ${computerSelection}`);
     }
    }
 
@@ -25,8 +31,9 @@ function getComputerChoice() {
     for (let i = 0; i < 5; i++){         
         let computerSelection = getComputerChoice();
         let playerSelection = prompt("rock paper scissors?").toLowerCase();
+
         console.log(playRound(computerSelection,playerSelection));
-        console.log(`Player score:${playerScore}. Computer score:${computerScore}`);
+        console.log(`Player score: ${playerScore}. Computer score: ${computerScore}`);
     }}
     
    function getWinner () {
