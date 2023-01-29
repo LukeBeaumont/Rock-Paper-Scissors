@@ -1,0 +1,48 @@
+.header {
+    
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.rock, .paper, .scissors {
+
+    border-color: black;
+    border-width: 2px;
+    border-style: groove;
+    padding: 20px;
+    margin: 30px;
+}
+
+.score-container {
+
+    display: flex;
+    justify-content: center;
+}
+
+.player-score, .computer-score {
+   
+    padding: 20px;
+    margin: 30px;
+  }
+
+.result-info {
+
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: black;
+    max-width: 300px;
+    padding: 20px;
+    margin: 30px;
+}

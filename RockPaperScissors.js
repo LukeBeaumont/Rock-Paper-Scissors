@@ -1,3 +1,14 @@
+const mainContainer = document.querySelector(".main-container"); 
+
+mainContainer.addEventListener("click", assignPlayerChoice);
+
+function assignPlayerChoice (e) {
+    let playerSelection = e.target; 
+    console.log (playerSelection);
+  }
+
+
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -27,29 +38,6 @@ function getComputerChoice() {
     }
    }
 
-   function game() {
-    for (let i = 0; i < 5; i++){         
-        let computerSelection = getComputerChoice();
-        let playerSelection = prompt("rock paper scissors?").toLowerCase();
-
-        console.log(playRound(computerSelection,playerSelection));
-        console.log(`Player score: ${playerScore}. Computer score: ${computerScore}`);
-       
-    }}
-    
     
   
-    game();
-
-     function getWinner () {
-        if (computerScore<playerScore) {
-            return("You have won best out of 5!");
-
-         } else if (computerScore>playerScore){
-            return("Computer wins best out of 5 :'(");
-
-          } else {
-            return ("After 5 games its a draw!");
-          }}
-
-    console.log (getWinner());
+   
