@@ -4,6 +4,11 @@
     justify-content: center;
 }
 
+h5 {
+    justify-content: center;
+    display:flex
+}
+
 .main-container {
     display: flex;
     justify-content: center;
