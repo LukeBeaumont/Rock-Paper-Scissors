@@ -1,41 +1,53 @@
-const mainContainer = document.querySelector(".main-container"); 
+const rockButton = document.querySelector(".rock"); 
+const paperButton = document.querySelector(".paper"); 
+const scissorsButton = document.querySelector(".scissors"); 
 
-mainContainer.addEventListener("click", assignPlayerChoice);
-
-function assignPlayerChoice (e) {
-    let playerSelection = e.target; 
-    console.log (playerSelection);
-  }
-
-
-
+const choice = document.querySelectorAll(".player-option");
 let playerScore = 0;
-let computerScore = 0;
+let computerScore = 0; 
+
+
+choice.forEach((weapon)=> 
+  weapon.addEventListener("click", ()=> {
+    if(weapon.id){
+        playRound(getComputerChoice(),weapon.id);
+    }}
+  ))
+
+function updateInfo (gameResult){
+
+    const resultInfo = document.querySelector(".result-info");
+    resultInfo.innerHTML = gameResult;
+}
+
+function updateScore (playerScore,computerScore) {
+    //  change innerhtml
+  document.querySelector(".player-score").innerHTML = `You: ${playerScore}`;
+    
+  document.querySelector(".computer-score").innerHTML = `Computer: ${computerScore}`;
+}
 
 function getComputerChoice() {
+    //update DOM with computers choice 
     let options = ["rock", "paper", "scissors"];
-    let random = options[Math.floor(Math.random()*options.length)];
-    return random;
+    let computerChoice = options[Math.floor(Math.random()*options.length)];
+    return computerChoice;
    }
 
-   function playRound (computerSelection,playerSelection){
-    if (playerSelection !== "rock" && playerSelection !== "paper" &&
-        playerSelection  !== "scissors") {
-         return ("Not a valid input. Try again.");
-    
-    } else if (playerSelection===computerSelection){
-        return ("it's a draw");
-      
-    } else if (playerSelection==="paper" && computerSelection==="rock" ||
+function playRound (computerSelection,playerSelection){
+     if (playerSelection===computerSelection){
+        updateInfo(`It's a draw. Computer chose ${computerSelection}`);
+      } else if 
+              (playerSelection==="paper" && computerSelection==="rock" ||
                playerSelection==="rock" && computerSelection==="scissors" ||
                playerSelection==="scissors" && computerSelection==="paper"){
-                playerScore++;
-                return (`you win! computer chose ${computerSelection}`);
-
-    } else {
-        computerScore++;
-        return (`you lose. computer chose ${computerSelection}`);
-    }
+              playerScore ++;
+               updateInfo(`You win! Computer chose ${computerSelection}`);
+        } else {
+        computerScore ++;
+        updateInfo(`You lose. Computer chose ${computerSelection}`);
+        
+    }   updateScore(playerScore,computerScore);
    }
 
     
