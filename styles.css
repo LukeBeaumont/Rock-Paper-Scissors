@@ -9,7 +9,7 @@
     justify-content: center;
 }
 
-.rock, .paper, .scissors {
+.player-option {
 
     border-color: black;
     border-width: 2px;
