@@ -1,7 +1,3 @@
-const rockButton = document.querySelector(".rock"); 
-const paperButton = document.querySelector(".paper"); 
-const scissorsButton = document.querySelector(".scissors"); 
-
 const choice = document.querySelectorAll(".player-option");
 let playerScore = 0;
 let computerScore = 0; 
@@ -11,20 +7,19 @@ choice.forEach((weapon)=>
   weapon.addEventListener("click", ()=> {
     if(weapon.id){
         playRound(getComputerChoice(),weapon.id);
+        checkWinner();
     }}
   ))
 
 function updateInfo (gameResult){
-
-    const resultInfo = document.querySelector(".result-info");
-    resultInfo.innerHTML = gameResult;
+  document.querySelector(".result-info").textContent = gameResult;
 }
 
+
+
 function updateScore (playerScore,computerScore) {
-    //  change innerhtml
-  document.querySelector(".player-score").innerHTML = `You: ${playerScore}`;
-    
-  document.querySelector(".computer-score").innerHTML = `Computer: ${computerScore}`;
+  document.querySelector(".player-score").textContent = `You: ${playerScore}`;
+  document.querySelector(".computer-score").textContent = `Computer: ${computerScore}`;
 }
 
 function getComputerChoice() {
@@ -35,21 +30,27 @@ function getComputerChoice() {
    }
 
 function playRound (computerSelection,playerSelection){
-     if (playerSelection===computerSelection){
-        updateInfo(`It's a draw. Computer chose ${computerSelection}`);
-      } else if 
-              (playerSelection==="paper" && computerSelection==="rock" ||
-               playerSelection==="rock" && computerSelection==="scissors" ||
-               playerSelection==="scissors" && computerSelection==="paper"){
-              playerScore ++;
-               updateInfo(`You win! Computer chose ${computerSelection}`);
-        } else {
+  if (playerSelection===computerSelection){
+        updateInfo(`It's a draw. Computer chose ${computerSelection}.`);
+  } else if 
+      (playerSelection==="paper" && computerSelection==="rock" ||
+       playerSelection==="rock" && computerSelection==="scissors" ||
+       playerSelection==="scissors" && computerSelection==="paper"){
+         playerScore ++;
+        updateInfo(`You win! Computer chose ${computerSelection}.`);        
+  } else {
         computerScore ++;
-        updateInfo(`You lose. Computer chose ${computerSelection}`);
-        
-    }   updateScore(playerScore,computerScore);
+        updateInfo(`You lose. Computer chose ${computerSelection}.`);
+     }   
+     updateScore(playerScore,computerScore);
    }
 
-    
+function checkWinner() { 
+  if (playerScore == 5) {
+    document.querySelector(".result-info").textContent = "Congratulations! You are the first to win 5 rounds!";
+  } else if (computerScore == 5) {
+    document.querySelector(".result-info").textContent = "Unlucky! The computer won 5 rounds.";
+  } else return;
+}
   
    
