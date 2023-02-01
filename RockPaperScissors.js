@@ -1,4 +1,4 @@
-const choice = document.querySelectorAll(".player-option");
+const choice = document.querySelectorAll("img");
 let playerScore = 0;
 let computerScore = 0; 
 
