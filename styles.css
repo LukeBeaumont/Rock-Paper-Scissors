@@ -9,6 +9,12 @@ h5 {
     display:flex
 }
 
+img {
+    max-width: 100px;
+    max-height: 100px;
+    padding: 15px;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
