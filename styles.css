@@ -55,9 +55,6 @@ img {
 .info {
     display: flex;
     justify-content: center;
-    border-style: ridge;
-    border-width: 1px;
-    border-color: black;
     max-width: 300px;
     padding: 20px;
     margin: 30px;
@@ -72,5 +69,8 @@ img {
     transform: scale(1.1);
     border-color: red;
     box-shadow: 0 0 10px red;
-    transition: all 0.07s;
+  
+    
 }
+
+
