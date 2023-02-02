@@ -68,3 +68,9 @@ img {
     justify-content: center;
 }
 
+#selected {
+    transform: scale(1.1);
+    border-color: red;
+    box-shadow: 0 0 10px red;
+    transition: all 0.07s;
+}

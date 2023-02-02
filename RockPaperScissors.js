@@ -3,10 +3,9 @@ let playerScore = 0;
 let computerScore = 0; 
 
 
-choice.forEach((weapon)=> 
-  weapon.addEventListener("click", ()=> {
-    if(weapon.id){
-        playRound(getComputerChoice(),weapon.id);
+choice.forEach((img) => img.addEventListener("click", ()=> {
+    if(img.id){
+        playRound(getComputerChoice(),img.id);
         console.log (playerScore, computerScore)
         checkWinner();
         gameReset();
@@ -75,3 +74,4 @@ function reset () {
   choice.forEach((img) => img.style.display = "flex");
   document.querySelector(".reset-button").style.display = "none";
 }
+
