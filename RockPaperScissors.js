@@ -55,7 +55,23 @@ function checkWinner() {
   
 function gameReset() {
     if (playerScore === 5 || computerScore === 5) {
+        choice.forEach((img) => 
+        img.style.display = "none")
+
+        document.querySelector(".reset-button").style.display = "flex";
+
         document.querySelector(".result-info").textContent += " Want to play again?";
     } else return; 
 }
-   
+
+document.querySelector(".reset").addEventListener("click", reset);
+
+function reset () {
+  playerScore = 0;
+  computerScore = 0;
+  document.querySelector(".result-info").textContent = "Good luck!";
+  document.querySelector(".player-score").textContent = `You: ${playerScore}`;
+  document.querySelector(".computer-score").textContent = `Computer: ${computerScore}`;
+  choice.forEach((img) => img.style.display = "flex");
+  document.querySelector(".reset-button").style.display = "none";
+}
